@@ -1,5 +1,5 @@
 # Customer Churn Analysis | Müşteri Churn Analizi
-
+Demo:https://me8u3r5m8gknt2cizbxqy6.streamlit.app/
 ## 📊 Project Overview | Proje Özeti
 
 Bu proje, bir banka müşterilerinin churn (terk etme) davranışını analiz etmek ve tahmin etmek amacıyla geliştirilmiştir. Makine öğrenmesi algoritmaları kullanarak müşteri kaybını önlemek için aksiyon planı oluşturmayı hedeflemektedir.
