@@ -65,11 +65,24 @@ data = pd.DataFrame({
 })
 
 # --- Model Loading ---
+import os
 try:
-    preprocessor = joblib.load("preprocessor.pkl")
-    model = joblib.load("churn_model.pkl")
+    # Try multiple paths for pickle files
+    base_path = os.path.dirname(__file__)
+    preprocessor_path = os.path.join(base_path, "preprocessor.pkl")
+    model_path = os.path.join(base_path, "churn_model.pkl")
+    
+    # If not found, try current directory
+    if not os.path.exists(preprocessor_path):
+        preprocessor_path = "preprocessor.pkl"
+    if not os.path.exists(model_path):
+        model_path = "churn_model.pkl"
+    
+    preprocessor = joblib.load(preprocessor_path)
+    model = joblib.load(model_path)
     model_loaded = True
-except:
+except Exception as e:
+    st.error(f"Model yükleme hatası: {str(e)}")
     model_loaded = False
 
 # --- Prediction ---
